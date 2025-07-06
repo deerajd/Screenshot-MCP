@@ -1,13 +1,13 @@
 """
-Screenshot MCP Server
----------------------
-This module provides an MCP (Modular Command Platform) server for taking screenshots.
-It exposes a tool to capture the current screen and return it as a JPEG image.
+Model Context Protocol (MCP) Screenshot Server
+----------------------------------------------
+This module implements an MCP (Model Context Protocol) server that enables LLM-based AI agents to capture screenshots of the current screen.
 
 Key Features:
+- Provides a tool for LLM agents to request and receive screenshots.
 - Uses pyautogui to capture the screen.
 - Returns the screenshot as a JPEG image with reduced quality for efficiency.
-- Designed to be run as an MCP server for integration with other systems and LLMs.
+- Designed for integration with AI agents and LLMs via the MCP protocol.
 
 Usage Example:
     Take a screenshot and return as an image:
