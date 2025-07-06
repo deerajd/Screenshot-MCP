@@ -17,7 +17,7 @@ A Model Context Protocol (MCP) server that enables LLM-based AI agents to captur
 
 ### 1. Install & Run
 
-You can run the MCP Screenshot Server using [`uvx`](https://github.com/uvx-dev/uvx):
+Run the MCP Screenshot Server using [`uvx`](https://github.com/uvx-dev/uvx):
 
 ```bash
 uvx --from git+https://github.com/deerajd/Screenshot-MCP.git mcp-server
@@ -30,15 +30,25 @@ uvx --from git+https://github.com/deerajd/Screenshot-MCP.git mcp-server
 Add the following to your tool configuration (for Claude, MCP clients, etc.):
 
 ```json
-"screenshot": {
-  "command": "uvx",
-  "args": [
-    "--from",
-    "git+https://github.com/deerajd/Screenshot-MCP.git",
-    "mcp-server"
-  ]
+{
+  "mcpServers": {
+    "screenshot": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "git+https://github.com/deerajd/Screenshot-MCP.git",
+        "mcp-server"
+      ]
+    }
+  }
 }
 ```
+
+This configuration launches the MCP Screenshot Server as a subprocess, exposing the `take_screenshot` tool to your LLM agent.
+
+---
+
+### 3. Usage
 
 From your LLM agent, call:
 
